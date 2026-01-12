@@ -1,0 +1,5 @@
+function activateEvil() {
+
+alert('Evil');
+
+}
