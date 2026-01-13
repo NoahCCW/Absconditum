@@ -2,6 +2,29 @@ body {
 background-color: #000000;
 }
 
-p {
+#welcome {
 color: #ff0000;
+}
+
+#evilBtn {
+	border: 2px solid black;
+	height: 100px;
+	width: 1024px;
+	background-color: #000000;
+	color: #000000;
+	transition: box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+#evilBtn:hover {
+	text-shadow: 0 0 20px #ff0000,  0 0 20px #ff0000,  0 0 20px #ff0000;
+	box-shadow: 0 0 20px 2px #ff0000;
+	color: #ff0000;
+}
+
+#dbcoop {
+	position: absolute;
+	top: 900px;
+	left: 100px;
+	z-index: 100;
+	color: #ff0000;
 }
