@@ -1,0 +1,26 @@
+body {
+	background-color: #444444;
+}
+
+#baseimg {
+	width: 1920px;
+}
+
+#top1 {
+	position: absolute;
+	z-index: 100;
+	width: 407px;
+	height: 307px;
+	top: 300px;
+	left: 1400px;
+}
+
+#top2 {
+	position: absolute;
+	z-index: 100;
+	width: 307px;
+	height: 408px;
+	top: 1000px;
+	left: 500px;
+}
+

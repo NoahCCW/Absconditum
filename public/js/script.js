@@ -49,6 +49,8 @@ document.addEventListener('keydown', function(event) {
 console.log('key pressed ' + event.key);
 if (event.key == 'E') {
 window.open("evil.html");
+} else if (event.key == 'C'){
+window.open("crane.html");
 }
 
 });
