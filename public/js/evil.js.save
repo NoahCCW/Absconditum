@@ -7,7 +7,7 @@ alert('Activating super evil program');
 };
 
 const topText = document.getElementById("welcome");
-const chars = "𖤐𓃶🜏𓆗⸸𓆙𓁹𓄃𓁼࿈𖥠𓄋𓁿༗𓆣𓄀𓅇𓋹𓆱𓄂☸⛧⃝☽";
+const chars = "𖤐🜏𓆗⸸𓆙𓁹𓄃𓁼࿈𖥠𓄋𓁿༗𓆣𓄀𓅇𓋹𓆱𓄂☸⛧⃝☽";
 
 function changeTopTextChar() {
 //let text = Array.from(topText.innerText);
@@ -19,7 +19,3 @@ textArray[randomIndex] = newChar;
 topText.innerText = textArray.join("");
 }
 setInterval(changeTopTextChar, 500);
-
-function showhim() {
-alert("The shift key will guide you on the origin site");
-}

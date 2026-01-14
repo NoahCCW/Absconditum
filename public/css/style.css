@@ -6,7 +6,7 @@ body {
 
 #evil {
 	position: absolute;
-	top: 20px;
+	top: 700px;
 	left: 50%;
 	border-radius: 10px;
 	width: 85px;
@@ -79,4 +79,34 @@ body {
 	left: 8000px;
 	color: #ab1645;
 		
+}
+
+#translation4 {
+	position: absolute;
+	left: 50%;
+	top: 750px;
+	width: 85px;
+}
+
+#translation5 {
+	position: absolute;
+	left: 57%;
+	top: 685px;
+	width: 85px;
+	height: 64px;
+	color: #990000
+}
+
+#zalgo1 {
+	position: absolute;
+	color: #ffccaa;
+	top: 1000px;
+	left: 1000px;
+	transform: rotate(-33deg);
+}
+
+#politic1 {
+	position: absolute;
+	top: 10000px;
+	color: #0e4f06;
 }
