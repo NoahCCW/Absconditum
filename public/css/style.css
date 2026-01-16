@@ -1,7 +1,7 @@
 @import url('fonts.googleapis.com');
 
 body {
-	background-color: #ba99ed;
+	background-color: #ab77de;
 }
 
 #evil {
@@ -168,4 +168,68 @@ body {
 	}
 }
 
+#translation6 {
+	position: absolute;
+	left: 4000px;
+	top: 1000px;
+	width: 100%;
+	transform: rotate(-45deg);
+	text-decoration: line-through wavy pink;
+	font-weight: 500px;
+	color: green;
+}
 
+#translation7 {
+	position: absolute;
+	left: 4000px;
+	top: 1000px;
+	width: 100%;
+	transform: rotate(30deg);
+	text-decoration: solid underline overline blue;
+	font-weight: 100px;
+	color: yellow;
+}
+
+#translation8 {
+	position: absolute;
+	left: 4000px;
+	top: 1000px;
+	width: 100%;
+	transform: rotate(-60deg);
+	text-decoration: underline solid yellow;
+	font-weight: 900px;
+	color: red;
+}
+
+#translation9 {
+	position: absolute;
+	left: 4000px;
+	top: 1000px;
+	width: 100%;
+	transform: rotate(-15deg);
+	text-decoration: overline dashed lime;
+	font-weight: 700px;
+	color: orange;
+}
+
+#translation10 {
+	position: absolute;
+	left: 4000px;
+	top: 1000px;
+	width: 100%;
+	transform: rotate(45deg);
+	text-decoration: line-through dotted #ff00ff;
+	font-weight: 400px;
+	color: purple;
+}
+
+#translation11 {
+	position: absolute;
+	left: 4000px;
+	width: 100%;
+	top: 1000px;
+	transform: rotate(90deg);
+	text-decoration: underline wavy #ae610a;
+	font-weight: 600px;
+	color: violet;
+}
