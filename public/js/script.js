@@ -33,6 +33,8 @@ function message() {
 		alert('MATH!');
 	}else if (name == greet) {
 		window.open("secret.html");
+	}else if (name == "cinnthebun") {
+		window.open("crane.html");
 	};
 
 };

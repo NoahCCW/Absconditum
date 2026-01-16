@@ -144,3 +144,28 @@ body {
 	left: 50%;
 	top: 0px;
 }
+
+#scrollsign1-box {
+	width: 500px;
+	overflow: hidden;
+	white-space: nowrap;
+	box-sizing: border-box;
+	border: 1px solid #ffffff;
+}
+
+#scrollsign1-text {
+	display: inline-block;
+	padding-left: 100%;
+	animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee{
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+
