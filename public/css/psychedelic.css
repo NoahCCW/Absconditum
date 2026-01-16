@@ -1,0 +1,14 @@
+body {
+background: radial-gradient(
+    circle,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  height: 100vh; /* Example: make the gradient cover the full viewport height */
+  width: 100%;
+}
