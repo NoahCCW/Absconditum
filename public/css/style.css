@@ -1,5 +1,3 @@
-@import url('fonts.googleapis.com');
-
 body {
 	background-color: #ab77de;
 }
@@ -319,4 +317,52 @@ body {
 	top: 9990px;
 	left: 9900px;
 
+}
+
+#machinery1{
+	position: absolute;
+	top: 6000px;
+	left: 5000px;
+}
+
+#machinery2{
+	position: absolute;
+	top: 5400px;
+	left: 900px;
+}
+
+#machinery3 {
+	position: absolute;
+	top: 0px;
+	left: 6000px;
+
+}
+
+#machinery4 {
+	position: absolute;
+	top: 450px;
+	left: 250px;
+}
+
+#blackcircle {
+	position: absolute;
+	top: 5750px;
+	left: 5000px;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	background-color: black;	
+}
+
+#battery {
+	position: absolute;
+	top: 5775px;
+	left: 5035px;
+	z-index: 1000;
+}
+
+#term {
+	position: absolute;
+	left: 4000px;
+	top: 4050px;
 }
