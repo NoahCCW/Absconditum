@@ -35,6 +35,8 @@ function message() {
 		window.open("secret.html");
 	}else if (name == "cinnthebun") {
 		window.open("crane.html");
+	}else if (name == "torta") {
+		alert("this desk aint big enough for the two of us, and unfortunately i OWN you");
 	};
 
 };

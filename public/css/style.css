@@ -366,3 +366,40 @@ body {
 	left: 4000px;
 	top: 4050px;
 }
+
+#gifcities1 {
+	position: absolute;
+	left: 3500px;
+	top: 400px;
+}
+
+#gifcities2 {
+	position: absolute;
+	left: 5000px;
+	top: 10000px;
+}
+
+#gifcities3 {
+	position: absolute;
+	left: 8700px;
+	top: 0px;
+}
+
+#gifcities4 {
+	position: absolute;
+	left: 5600px;
+	top: 500px;
+}
+
+#gifcities5 {
+	position: absolute;
+	left: 8000px;
+	top: 7500px;
+}
+
+#gifcities6 {
+	position: absolute;
+	left: 6767px;
+	top: 6767px;
+}
+
