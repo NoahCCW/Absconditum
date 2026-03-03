@@ -403,3 +403,12 @@ body {
 	top: 6767px;
 }
 
+#hexlink {
+	position: absolute;
+	left: 0px;
+	top: 237px;
+	color : #0000bb;
+	font-size: 30px;
+	transform: rotate(32deg);
+	text-decoration: underline wavy #ff00ff
+}
