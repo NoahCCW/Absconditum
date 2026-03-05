@@ -412,3 +412,12 @@ body {
 	transform: rotate(32deg);
 	text-decoration: underline wavy #ff00ff
 }
+
+#hexguesstip{
+	position: absolute;
+	left: 8088px;	
+	top: 5642px;
+	font-size: 29px;
+	color: #ff90e5;
+	transform: rotate(-12deg);
+}

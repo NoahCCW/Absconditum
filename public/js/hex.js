@@ -1,5 +1,6 @@
 console.log("hex.js has loaded");
 
+
 //randomizing the code
 
 var ra = Math.floor(Math.random() * 15);
@@ -19,7 +20,10 @@ var baa = 0;
 var bba = 0;
 
 //turning numbers into letters where needed
- 
+
+const bg = document.getElementById('background') || document.body;
+const backCol = window.getComputedStyle(bg);
+
 if (ra == 10){
  raa = 'a'; 
 } else if (ra == 11){
@@ -129,6 +133,7 @@ var hexcode = ""+raa+""+rba+""+baa+""+bba+""+gaa+""+gba+"";
 //set background to hex code
 
 document.body.style.backgroundColor = "#" + hexcode;
+const rgbValue = backCol.backgroundColor;
 
 //when the button is clicked to guess
 
@@ -145,6 +150,8 @@ var guess = promptBox.value;
 //catch early if you are dead on
 if (guess === "hack"){
 alert(hexcode);
+} else if (guess === "rgb") {
+alert(rgbValue)
 } else {
 //alert("incorrect");
 var rab = guess.charAt(0);
@@ -387,7 +394,15 @@ document.getElementById('previGuess').style.backgroundColor = "#"+guess;
 
 }
 
-
+/*
+document.addEventListener('keydown', function(event) {
+console.log('key pressed ' + event.key);
+if (event.key == 'A') {
+window.open("absconditum.net");
+} else if (event.key == 'C'){
+window.open("crane.html");
+}
+*/
 
 
 
