@@ -15,7 +15,7 @@ textArray[randomIndex] = newChar;
 hewo.innerText = textArray.join("");
 }
 setInterval(changeHelloWorldChar, 500);
-
+var dev = 0;
 
 function message() {
 	let greet = hewo.innerHTML;
@@ -37,7 +37,10 @@ function message() {
 		window.open("crane.html");
 	}else if (name == "torta") {
 		alert("this desk aint big enough for the two of us, and unfortunately i OWN you");
-	};
+	}else if (name == "ASJDB!*(@&#KJSHKABasudOAksh@H*UO!KQWlkjdNQIDU@eoIU2oNEQKWJNEQDQUIOuqwJhq2oi"){
+	dev = 1;
+	alert("you are in developer mode, you can now use the inspect menu or console");
+	}
 
 };
 
@@ -59,6 +62,18 @@ if (event.key == 'E') {
 window.open("evil.html");
 } else if (event.key == 'C'){
 window.open("crane.html");
+}else if (event.key == 'I'){
+	if(dev == 0){
+window.close();
+	}
+}else if (event.key == 'J'){
+	if(dev == 0){
+window.close();
+	}
+}else if (event.key == 'Control'){
+	if(dev == 0){
+window.close();
+	}
 }
 
 });
@@ -66,3 +81,32 @@ window.open("crane.html");
 document.addEventListener('keyup', function(event) {
 console.log('Key upped ' + event.key);
 });
+
+function geo() {
+//alert("hi!");
+//window.open();
+var lat1 = Math.floor(Math.random() * 19) - 9;
+var lat2 = Math.floor(Math.random() * 10);
+var sla1 = Math.floor(Math.random() * 10);
+var sla2 = Math.floor(Math.random() * 10);
+var sla3 = Math.floor(Math.random() * 10);
+var sla4 = Math.floor(Math.random() * 10);
+var sla5 = Math.floor(Math.random() * 10);
+var sla6 = Math.floor(Math.random() * 10);
+var sla7 = Math.floor(Math.random() * 10);
+
+var lon1 = Math.floor(Math.random() * 19) - 9;
+var lon2 = Math.floor(Math.random() * 10);
+var slo1 = Math.floor(Math.random() * 10);
+var slo2 = Math.floor(Math.random() * 10);
+var slo3 = Math.floor(Math.random() * 10);
+var slo4 = Math.floor(Math.random() * 10);
+var slo5 = Math.floor(Math.random() * 10);
+var slo6 = Math.floor(Math.random() * 10);
+var slo7 = Math.floor(Math.random() * 10);
+
+var lat = ""+lat1+""+lat2+"."+sla1+""+sla1+""+sla2+""+sla3+""+sla4+""+sla5+""+sla6+""+sla7+"";
+var lon = ""+lon1+""+lon2+"."+slo1+""+slo1+""+slo2+""+slo3+""+slo4+""+slo5+""+slo6+""+slo7+"";
+
+window.open("https://maps.google.com/?q="+lat+","+lon+"");
+}
