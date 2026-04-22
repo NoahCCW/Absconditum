@@ -22,4 +22,13 @@ setInterval(changeTopTextChar, 500);
 
 function showhim() {
 alert("The shift key will guide you on the origin site");
+};
+
+document.addEventListener('keydown', function(event) {
+console.log('key pressed ' + event.key);
+if (event.key == 'Control'){
+
+window.location.replace("https://www.google.com");
 }
+
+});

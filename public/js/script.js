@@ -17,6 +17,10 @@ hewo.innerText = textArray.join("");
 setInterval(changeHelloWorldChar, 500);
 var dev = 0;
 
+function monthlyReturn() {
+document.getElementById('mback').innerHTML = "3";
+}
+
 function message() {
 	let greet = hewo.innerHTML;
 	let name = prompt("enter your name");
@@ -72,7 +76,8 @@ window.close();
 	}
 }else if (event.key == 'Control'){
 	if(dev == 0){
-window.close();
+//window.close();
+window.location.replace("https://www.google.com");
 	}
 }
 

@@ -12,3 +12,13 @@ background: radial-gradient(
   height: 100vh; /* Example: make the gradient cover the full viewport height */
   width: 100%;
 }
+
+#lsd2 {
+position: absolute;
+top: 200px;
+left: 0px;
+color: #0e001a;
+width: 300px;
+background-color: white;
+
+}

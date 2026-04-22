@@ -404,7 +404,14 @@ window.open("crane.html");
 }
 */
 
+document.addEventListener('keydown', function(event) {
+console.log('key pressed ' + event.key);
+if (event.key == 'Control'){
 
+window.location.replace("https://www.google.com");
+}
+
+});
 
 
 

@@ -1,0 +1,72 @@
+body{
+background-color: black;
+}
+
+#headr{
+color: white;
+position: sticky;
+z-index: 5;
+text-shadow: 3px 3px 1px red;
+}
+
+#music1{
+position: absolute;
+top: 0;
+left: 0;
+z-index: 10;
+}
+
+#music1:hover{
+opacity: 0.5;
+}
+
+#books1{
+z-index: 4;
+color: blue;
+position: absolute;
+left: 75px;
+top: 300px;
+text-shadow: 9px 9px 2px yellow;
+font-size: 75px;
+}
+
+#books2{
+z-index: 1;
+color: #ff00ff;
+position: absolute;
+left: 100px;
+top: 25px;
+text-shadow: 1px 1px 0px #00ff00;
+font-size: 7px;
+}
+
+#books3{
+z-index: 3;
+color: #670000;
+position: absolute;
+left: 230px;
+top: 750px;
+text-shadow: 0px 0px 2px white;
+font-size: 15px;
+}
+
+#books4{
+z-index: 4;
+color: orange;
+position: absolute;
+left: 120px;
+top: 250px;
+font-size: 35px;
+text-shadow: 15px 15px 3px #00ff00;
+}
+
+#books5{
+color: black;
+z-index: 2;
+position: absolute;
+left: 30px;
+top: 320px;
+font-size: 29px;
+text-shadow: 0px 0px 3px white;
+
+}
