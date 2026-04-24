@@ -44,6 +44,9 @@ function message() {
 	}else if (name == "ASJDB!*(@&#KJSHKABasudOAksh@H*UO!KQWlkjdNQIDU@eoIU2oNEQKWJNEQDQUIOuqwJhq2oi"){
 	dev = 1;
 	alert("you are in developer mode, you can now use the inspect menu or console");
+	}else if (name == "deleter"){
+	let toDel = prompt("what do you want to delete?");
+	document.getElementById(''+toDel+'').remove();
 	}
 
 };
@@ -115,3 +118,8 @@ var lon = ""+lon1+""+lon2+"."+slo1+""+slo1+""+slo2+""+slo3+""+slo4+""+slo5+""+sl
 
 window.open("https://maps.google.com/?q="+lat+","+lon+"");
 }
+
+document.addEventListener('contextmenu', (event) => {
+    console.log("Right click detected");
+    event.preventDefault(); 
+});

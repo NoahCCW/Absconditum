@@ -416,3 +416,7 @@ window.location.replace("https://www.google.com");
 
 
 
+document.addEventListener('contextmenu', (event) => {
+    console.log("Right click detected");
+    event.preventDefault(); 
+});
