@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Imposter Trend Game</title>
+    <style>
+        /* CSS Reset & Core Touch Architecture */
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: #0f172a; color: #f8fafc; padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        
+        /* Container Screens */
+        .screen { display: none; width: 100%; max-width: 440px; background: #1e293b; padding: 24px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); border: 1px solid #334155; margin: auto 0; }
+        .active { display: flex; flex-direction: column; gap: 16px; }
+        
+        /* Typography & Layout Elements */
+        h2 { font-size: 24px; font-weight: 700; text-align: center; color: #38bdf8; margin-bottom: 4px; }
+        p { font-size: 15px; color: #94a3b8; line-height: 1.5; }
+        label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #38bdf8; display: block; margin-bottom: 2px; }
+        hr { border: 0; border-top: 1px solid #334155; margin: 8px 0; }
+        
+        /* Inputs & Interactive Components */
+        select, input[type="text"] { width: 100%; min-height: 48px; background: #0f172a; border: 1px solid #475569; border-radius: 10px; color: #f8fafc; padding: 0 14px; font-size: 16px; transition: border-color 0.2s; }
+        select:focus, input[type="text"]:focus { outline: none; border-color: #38bdf8; }
+        
+        /* Buttons with tactile tap sizes */
+        button { width: 100%; min-height: 52px; background: #38bdf8; border: none; border-radius: 10px; color: #0f172a; font-size: 16px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+        button:active { filter: brightness(0.85); }
+        .secondary-btn { background: #334155; color: #f8fafc; border: 1px solid #475569; }
+        .danger-btn { background: #ef4444; color: #ffffff; }
+        
+        /* Custom Player List Styles */
+        .flex-row { display: flex; gap: 8px; width: 100%; }
+        .player-scroll-box { max-height: 160px; overflow-y: auto; background: #0f172a; border-radius: 10px; border: 1px solid #334155; padding: 4px; }
+        .player-chip { display: flex; justify-content: space-between; align-items: center; background: #1e293b; padding: 8px 12px; border-radius: 8px; margin: 4px; border: 1px solid #334155; }
+        .chip-delete { background: none; min-height: auto; width: auto; color: #f87171; font-weight: 500; font-size: 14px; padding: 4px; }
+        
+        /* Secret Dynamic Interactive Cards */
+        .game-card { background: #0f172a; border: 2px dashed #475569; border-radius: 12px; padding: 24px; text-align: center; margin: 8px 0; }
+        .secret-reveal-value { font-size: 36px; font-weight: 800; color: #ef4444; text-transform: uppercase; margin: 12px 0; letter-spacing: -0.02em; }
+        .instruction-box { background: #0284c7; color: #ffffff; padding: 14px; border-radius: 10px; font-size: 14px; text-align: left; line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+    <div id="view-setup" class="screen active">
+        <h2>Imposter Setup</h2>
+        <p style="text-align: center;">Pass-and-play party game engine.</p>
+        
+        <div>
+            <label>Select Game Mode</label>
+            <select id="setting-mode" onchange="handleModeConfigChange()">
+                <option value="word">Secret Word Match</option>
+                <option value="rating">Vibe Rating System (X/10)</option>
+            </select>
+        </div>
+
+        <div id="wrapper-genre">
+            <label>Word Theme Grouping</label>
+            <select id="setting-genre"></select>
+        </div>
+
+        <div>
+            <label>Imposter Threat Allocation</label>
+            <select id="setting-imposters">
+                <option value="1">Exactly 1 Imposter</option>
+                <option value="2">Exactly 2 Imposters</option>
+                <option value="any">Chaos Mode ("Any" Count Randomizer)</option>
+            </select>
+        </div>
+
+        <hr>
+
+        <div>
+            <label>Register Players (<span id="ui-count">0</span> added)</label>
+            <div class="flex-row">
+                <input type="text" id="input-player-name" placeholder="Type player name..." onkeydown="if(event.key==='Enter') executePlayerRegistration()">
+                <button type="button" style="width: 80px; min-height: 48px;" onclick="executePlayerRegistration()">Add</button>
+            </div>
+        </div>
+
+        <div class="player-scroll-box" id="ui-player-list-box"></div>
+
+        <button type="button" style="background: #10b981; color: #fff;" onclick="executeGameInitialization()">Initialize Match</button>
+    </div>
+
+
+    <div id="view-pass-loop" class="screen">
+        <h2>Pass the Phone</h2>
+        <p style="text-align: center;">Maintain absolute secrecy. Keep the screen hidden from everyone else!</p>
+        
+        <div style="font-size: 28px; font-weight: 800; text-align: center; color: #38bdf8; margin: 16px 0;" id="ui-active-player-name">---</div>
+        
+        <button type="button" id="btn-trigger-reveal" onclick="processPlayerSecretReveal()">View My Secret Assignment</button>
+
+        <div id="card-secret-viewport" class="game-card" style="display: none;">
+            <p style="font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase;">Your Private Context:</p>
+            <div id="ui-secret-payload" class="secret-reveal-value">ERROR</div>
+            <div id="ui-mode-helper-box" class="instruction-box"></div>
+        </div>
+
+        <button type="button" id="btn-trigger-next" class="secondary-btn" style="display: none;" onclick="processRotationAdvance()">Understood (Pass Phone)</button>
+    </div>
+
+
+    <div id="view-discussion" class="screen">
+        <h2>Debate & Accuse!</h2>
+        <p style="text-align: center;">All roles have been distributed. Start the round!</p>
+        
+        <div class="instruction-box" id="ui-discussion-rules" style="background: #1e293b; border: 1px solid #475569;">
+            </div>
+
+        <hr>
+        
+        <button type="button" onclick="displayEndGameManifest()" style="background: #a855f7; color: #fff;">Expose the Imposters</button>
+        
+        <div id="card-manifest-viewport" class="game-card" style="display: none; text-align: left; background: #0f172a;">
+            <h3 style="color: #38bdf8; font-size: 16px; margin-bottom: 8px; text-transform: uppercase;">Identity Matrix:</h3>
+            <div id="ui-manifest-list" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+
+        <button type="button" class="danger-btn" onclick="returnToLobby()">Return to Lobby</button>
+    </div>
+
+    <script>
+        // High-Vibe Data Matrix
+        const DICTIONARY_DATABASE = {
+            gaming: ["Minecraft", "Roblox", "Fortnite", "Valorant", "Overwatch", "Grand Theft Auto", "Zelda", "Pokemon", "League of Legends", "Super Mario"],
+            pop_culture: ["TikTok", "YouTube", "BeReal", "Skibidi", "Discord", "Spotify", "Netflix", "Meme", "Influencer", "Capybara"],
+            food: ["Spicy Ramen", "Boba Tea", "Chipotle Burrito", "Sour Patches", "Avocado Toast", "Glazed Donut", "Sushi Roll", "Chicken Tenders", "Waffles", "Iced Coffee"],
+            hobbies: ["Gym Crushing", "Cosplaying", "Vlogging", "Thrifting", "Anime Binging", "Skateboarding", "D&D Campaign", "Scrolling", "DJing", "Beatmaking"]
+        };
+
+        // Reactive Application State
+        let playerRegistry = [];
+        let assignedMatchRoles = [];
+        let executionPointer = 0;
+        let selectedMode = 'word';
+
+        // Initialize lists dynamically
+        function setupGenreSelectorOptions() {
+            const selector = document.getElementById('setting-genre');
+            selector.innerHTML = '<option value="megalist">Combined Mega-List (All Themes)</option>';
+            for (let genre in DICTIONARY_DATABASE) {
+                let formattedName = genre.replace('_', ' ');
+                selector.innerHTML += `<option value="${genre}">${formattedName.charAt(0).toUpperCase() + formattedName.slice(1)}</option>`;
+            }
+        }
+
+        function handleModeConfigChange() {
+            selectedMode = document.getElementById('setting-mode').value;
+            document.getElementById('wrapper-genre').style.style.display = (selectedMode === 'word') ? 'block' : 'none';
+        }
+
+        // Handle Adding and Removing Players
+        function executePlayerRegistration() {
+            const field = document.getElementById('input-player-name');
+            const cleanName = field.value.trim();
+            
+            if (cleanName && !playerRegistry.includes(cleanName)) {
+                playerRegistry.push(cleanName);
+                field.value = '';
+                refreshPlayerLobbyUI();
+            }
+        }
+
+        function unregisterPlayer(index) {
+            playerRegistry.splice(index, 1);
+            refreshPlayerLobbyUI();
+        }
+
+        function refreshPlayerLobbyUI() {
+            const container = document.getElementById('ui-player-list-box');
+            container.innerHTML = '';
+            document.getElementById('ui-count').innerText = playerRegistry.length;
+
+            playerRegistry.forEach((name, index) => {
+                container.innerHTML += `
+                    <div class="player-chip">
+                        <span>${name}</span>
+                        <button type="button" class="chip-delete" onclick="unregisterPlayer(${index})">Remove</button>
+                    </div>
+                `;
+            });
+        }
+
+        // core logic for game generation
+        function executeGameInitialization() {
+            const targetImposterSetting = document.getElementById('setting-imposters').value;
+            let numericImposterGoal = 1;
+
+            if (targetImposterSetting === '2') numericImposterGoal = 2;
+            
+            // Boundary Fail-safes
+            if (playerRegistry.length < 3) {
+                alert("You need a minimum of 3 players to spin up a game context!");
+                return;
+            }
+            if (targetImposterSetting !== 'any' && playerRegistry.length <= numericImposterGoal) {
+                alert(`You can't have ${numericImposterGoal} Imposters in a group of ${playerRegistry.length} players! Add more friends.`);
+                return;
+            }
+
+            // Execute Chaos Mode "Any" Logic
+            if (targetImposterSetting === 'any') {
+                const maxAllowedImposters = playerRegistry.length - 1; 
+                numericImposterGoal = Math.floor(Math.random() * maxAllowedImposters) + 1;
+            }
+
+            // Resolve Global Game Truth
+            let secretTruthPayload = "";
+            if (selectedMode === 'word') {
+                const targetGenre = document.getElementById('setting-genre').value;
+                let activeWordPool = [];
+                
+                if (targetGenre === 'megalist') {
+                    for (let key in DICTIONARY_DATABASE) activeWordPool = activeWordPool.concat(DICTIONARY_DATABASE[key]);
+                } else {
+                    activeWordPool = DICTIONARY_DATABASE[targetGenre];
+                }
+                secretTruthPayload = activeWordPool[Math.floor(Math.random() * activeWordPool.length)];
+            } else {
+                // Build numerical baseline rating scale truth string
+                secretTruthPayload = `${Math.floor(Math.random() * 10) + 1}/10`;
+            }
+
+            // Shuffle Indices to extract structural Imposter Positions
+            let indexMap = Array.from({ length: playerRegistry.length }, (_, i) => i);
+            let extractedImposterIndices = [];
+            for (let i = 0; i < numericImposterGoal; i++) {
+                let choiceToken = Math.floor(Math.random() * indexMap.length);
+                extractedImposterIndices.push(indexMap.splice(choiceToken, 1)[0]);
+            }
+
+            // Compile the role configuration array
+            assignedMatchRoles = playerRegistry.map((player, index) => {
+                const isSpy = extractedImposterIndices.includes(index);
+                return {
+                    playerName: player,
+                    isImposter: isSpy,
+                    truthPayload: isSpy ? "IMPOSTER" : secretTruthPayload,
+                    actualGroupTruth: secretTruthPayload
+                };
+            });
+
+            // Trigger Pass-and-Play Loop Runtime
+            executionPointer = 0;
+            switchActiveViewport('view-pass-loop');
+            evaluateLoopUIRender();
+        }
+
+        // Loop Screen Navigation Controls
+        function evaluateLoopUIRender() {
+            document.getElementById('card-secret-viewport').style.display = 'none';
+            document.getElementById('btn-trigger-next').style.display = 'none';
+            document.getElementById('btn-trigger-reveal').style.display = 'block';
+
+            if (executionPointer < assignedMatchRoles.length) {
+                document.getElementById('ui-active-player-name').innerText = assignedMatchRoles[executionPointer].playerName;
+            } else {
+                executeDiscussionTransition();
+            }
+        }
+
+        function processPlayerSecretReveal() {
+            const currentRecord = assignedMatchRoles[executionPointer];
+            const displayValue = document.getElementById('ui-secret-payload');
+            const explanationBox = document.getElementById('ui-mode-helper-box');
+
+            displayValue.innerText = currentRecord.truthPayload;
+
+            if (selectedMode === 'word') {
+                if (currentRecord.isImposter) {
+                    displayValue.style.color = '#ef4444';
+                    explanationBox.innerHTML = `🕵️‍♂️ <strong>YOU ARE THE IMPOSTER!</strong><br><br>You do not know the group's secret word. Listen carefully to the single-word hints others give, deduce the topic, and blend in when it's your turn to speak.`;
+                } else {
+                    displayValue.style.color = '#10b981';
+                    explanationBox.innerHTML = `👥 <strong>YOU ARE A TEAMMATE</strong><br><br>The group's secret word is shown above. On your turn, say exactly <strong>one word</strong> as a hint to prove your identity without completely giving it away to the Imposter.`;
+                }
+            } else { // Rating Match Game Mechanics
+                if (currentRecord.isImposter) {
+                    displayValue.style.color = '#ef4444';
+                    explanationBox.innerHTML = `🕵️‍♂️ <strong>YOU ARE THE IMPOSTER!</strong><br><br>You have no idea what the target quality rating score is. Everyone else will give a descriptive hint matching a specific quality tier. Adjust your vibe quickly to mimic them!`;
+                } else {
+                    displayValue.style.color = '#38bdf8';
+                    explanationBox.innerHTML = `👥 <strong>YOU ARE A TEAMMATE</strong><br><br>The true quality rating baseline is <strong>${currentRecord.truthPayload}</strong>.<br><br>Name a real-world restaurant, video game, movie, or activity that fits this exact level of quality (e.g., if it's 2/10, name something terrible).`;
+                }
+            }
+
+            document.getElementById('card-secret-viewport').style.display = 'block';
+            document.getElementById('btn-trigger-next').style.display = 'block';
+            document.getElementById('btn-trigger-reveal').style.display = 'none';
+        }
+
+        function processRotationAdvance() {
+            executionPointer++;
+            evaluateLoopUIRender();
+        }
+
+        // Discussion runtime compilation
+        function executeDiscussionTransition() {
+            switchActiveViewport('view-discussion');
+            document.getElementById('card-manifest-viewport').style.display = 'none';
+
+            const interactionLog = document.getElementById('ui-discussion-rules');
+            if (selectedMode === 'word') {
+                interactionLog.innerHTML = `
+                    <h4 style="color:#38bdf8; margin-bottom:6px;">Secret Word Mode Activated</h4>
+                    <p style="color:#fff; margin-bottom:8px;">Go around the circle in order. Each player must give a <strong>single-word hint</strong>.</p>
+                    <p>No extra descriptions or full sentences allowed. Once everyone speaks, start the discussion and vote on who didn't fit the vibe!</p>
+                `;
+            } else {
+                interactionLog.innerHTML = `
+                    <h4 style="color:#38bdf8; margin-bottom:6px;">Vibe Rating Challenge Mode</h4>
+                    <p style="color:#fff; margin-bottom:8px;">Go around the circle. Each player names an entity or item that directly represents the <strong>secret X/10 quality level</strong>.</p>
+                    <p>The Imposter will have to guess the scale on the fly. Spot the person whose rating description feels completely off!</p>
+                `;
+            }
+        }
+
+        function displayEndGameManifest() {
+            const targetContainer = document.getElementById('ui-manifest-list');
+            targetContainer.innerHTML = '';
+
+            assignedMatchRoles.forEach(record => {
+                let badgeText = record.isImposter ? `<span style="color:#f87171; font-weight:bold;">[IMPOSTER]</span>` : `<span style="color:#34d399;">[Teammate]</span>`;
+                targetContainer.innerHTML += `
+                    <div style="padding:8px; border-bottom:1px solid #334155; font-size:15px;">
+                        <strong>${record.playerName}</strong>: ${badgeText} (Saw: "${record.truthPayload}")
+                    </div>
+                `;
+            });
+
+            document.getElementById('card-manifest-viewport').style.display = 'block';
+        }
+
+        function returnToLobby() {
+            switchActiveViewport('view-setup');
+        }
+
+        function switchActiveViewport(targetId) {
+            document.querySelectorAll('.screen').forEach(view => view.classList.remove('active'));
+            document.getElementById(targetId).classList.add('active');
+        }
+
+        // Global lifecycle init mapping bootstrap
+        window.onload = function() {
+            setupGenreSelectorOptions();
+            handleModeConfigChange();
+        };
+    </script>
+</body>
+</html>

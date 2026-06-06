@@ -1,0 +1,1 @@
+subfinder -d example.com -silent | ffuf -w ~small.txt -u FUZZ/FUZZER -stdin -stdin-num 1 -rate 20 -mc 200,301,302

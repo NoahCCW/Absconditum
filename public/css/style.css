@@ -645,3 +645,27 @@ height: 66px;
 #ruisiang2:hover{
 filter: contrast(150%) brightness(25%) saturate(10);
 }
+
+
+#spying{
+position: absolute;
+left: 1500px;
+top: 50px;
+}
+
+#thomas1{
+position: absolute;
+color: brown;
+top: 764px;
+left: 29px;
+text-shadow: 2px 2px 1px orange;
+}
+
+#imp {
+z-index: 100000;
+position: absolute;
+left: 1000px;
+top: 500px;
+height: 10%;
+width: 10%;
+}
