@@ -123,20 +123,12 @@
     </div>
 
     <script>
-        // Core Answer Words Matrix
+        // High-Vibe Data Matrix
         const DICTIONARY_DATABASE = {
             gaming: ["Minecraft", "Roblox", "Fortnite", "Valorant", "Overwatch", "Grand Theft Auto", "Zelda", "Pokemon", "League of Legends", "Super Mario"],
             pop_culture: ["TikTok", "YouTube", "BeReal", "Skibidi", "Discord", "Spotify", "Netflix", "Meme", "Influencer", "Capybara"],
             food: ["Spicy Ramen", "Boba Tea", "Chipotle Burrito", "Sour Patches", "Avocado Toast", "Glazed Donut", "Sushi Roll", "Chicken Tenders", "Waffles", "Iced Coffee"],
             hobbies: ["Gym Crushing", "Cosplaying", "Vlogging", "Thrifting", "Anime Binging", "Skateboarding", "D&D Campaign", "Scrolling", "DJing", "Beatmaking"]
-        };
-
-        // Parallel Imposter Clue Word Matrix (Maps index-for-index directly to DICTIONARY_DATABASE)
-        const HINT_DATABASE = {
-            gaming: ["Blocks", "Oof", "Dance", "Spike", "Payload", "Crime", "Triforce", "Balls", "Salty", "Plumber"],
-            pop_culture: ["Scroll", "Videos", "Camera", "Toilet", "Chat", "Music", "Chill", "Funny", "Clout", "Rodent"],
-            food: ["Noodles", "Tapioca", "Wrap", "Candy", "Brunch", "Sprinkles", "Seaweed", "Nuggets", "Syrup", "Brew"],
-            hobbies: ["Weights", "Costume", "Camera", "Vintage", "Subtitles", "Kickflip", "Dice", "Feed", "Turntable", "Samples"]
         };
 
         // Reactive Application State
@@ -221,157 +213,14 @@
 
             if (selectedMode === 'word') {
                 const targetGenre = document.getElementById('setting-genre').value;
-                let finalCategoryKey = "";
-                let itemIndex = 0;
+                let activeWordPool = [];
+                let exactMatchingKey = "";
                 
                 if (targetGenre === 'megalist') {
-                    // Pull a completely random category key to ensure accurate indexing
+                    // Choose a random key from the keys available to keep hints closely correlated
                     const keys = Object.keys(DICTIONARY_DATABASE);
-                    finalCategoryKey = keys[Math.floor(Math.random() * keys.length)];
+                    exactMatchingKey = keys[Math.floor(Math.random() * keys.length)];
+                    activeWordPool = DICTIONARY_DATABASE[exactMatchingKey];
                 } else {
-                    finalCategoryKey = targetGenre;
-                }
-                
-                const activeWordPool = DICTIONARY_DATABASE[finalCategoryKey];
-                itemIndex = Math.floor(Math.random() * activeWordPool.length);
-                
-                // Pick true word and extract its index-perfect contextual matching hint word
-                secretTruthPayload = activeWordPool[itemIndex];
-                imposterHintWord = HINT_DATABASE[finalCategoryKey][itemIndex];
-                
-            } else {
-                // Build numerical baseline rating scale truth string
-                secretTruthPayload = `${Math.floor(Math.random() * 10) + 1}/10`;
-            }
-
-            // Shuffle Indices to extract structural Imposter Positions
-            let indexMap = Array.from({ length: playerRegistry.length }, (_, i) => i);
-            let extractedImposterIndices = [];
-            for (let i = 0; i < numericImposterGoal; i++) {
-                let choiceToken = Math.floor(Math.random() * indexMap.length);
-                extractedImposterIndices.push(indexMap.splice(choiceToken, 1)[0]);
-            }
-
-            // Compile the role configuration array
-            assignedMatchRoles = playerRegistry.map((player, index) => {
-                const isSpy = extractedImposterIndices.includes(index);
-                return {
-                    playerName: player,
-                    isImposter: isSpy,
-                    truthPayload: isSpy ? "IMPOSTER" : secretTruthPayload,
-                    imposterHint: imposterHintWord,
-                    actualGroupTruth: secretTruthPayload
-                };
-            });
-
-            // Trigger Pass-and-Play Loop Runtime
-            executionPointer = 0;
-            switchActiveViewport('view-pass-loop');
-            evaluateLoopUIRender();
-        }
-
-        // Loop Screen Navigation Controls
-        function evaluateLoopUIRender() {
-            document.getElementById('card-secret-viewport').style.display = 'none';
-            document.getElementById('btn-trigger-next').style.display = 'none';
-            document.getElementById('btn-trigger-reveal').style.display = 'block';
-
-            if (executionPointer < assignedMatchRoles.length) {
-                document.getElementById('ui-active-player-name').innerText = assignedMatchRoles[executionPointer].playerName;
-            } else {
-                executeDiscussionTransition();
-            }
-        }
-
-        function processPlayerSecretReveal() {
-            const currentRecord = assignedMatchRoles[executionPointer];
-            const displayValue = document.getElementById('ui-secret-payload');
-            const explanationBox = document.getElementById('ui-mode-helper-box');
-
-            if (selectedMode === 'word') {
-                if (currentRecord.isImposter) {
-                    displayValue.innerText = "IMPOSTER";
-                    displayValue.style.color = '#ef4444';
-                    explanationBox.innerHTML = `🕵️‍♂️ <strong>YOU ARE THE IMPOSTER!</strong><br><br>You do not know the real word. However, here is your dynamic clue hint:<br><br><span style="font-size: 22px; color:#f43f5e; font-weight:bold; display:block; text-align:center; letter-spacing: 0.02em;">"${currentRecord.imposterHint.toUpperCase()}"</span><br>Use this specific clue's context to blend in with your team's one-word hints!`;
-                } else {
-                    displayValue.innerText = currentRecord.truthPayload;
-                    displayValue.style.color = '#10b981';
-                    explanationBox.innerHTML = `👥 <strong>YOU ARE A TEAMMATE</strong><br><br>The group's secret word is shown above. On your turn, say exactly <strong>one word</strong> as a hint to prove your identity without completely giving it away to the Imposter.`;
-                }
-            } else { // Rating Match Game Mechanics
-                if (currentRecord.isImposter) {
-                    displayValue.innerText = "IMPOSTER";
-                    displayValue.style.color = '#ef4444';
-                    explanationBox.innerHTML = `🕵️‍♂️ <strong>YOU ARE THE IMPOSTER!</strong><br><br>You have no idea what the target quality rating score is. Everyone else will give a descriptive hint matching a specific quality tier. Adjust your vibe quickly to mimic them!`;
-                } else {
-                    displayValue.innerText = currentRecord.truthPayload;
-                    displayValue.style.color = '#38bdf8';
-                    explanationBox.innerHTML = `👥 <strong>YOU ARE A TEAMMATE</strong><br><br>The true quality rating baseline is <strong>${currentRecord.truthPayload}</strong>.<br><br>Name a real-world restaurant, video game, movie, or activity that fits this exact level of quality (e.g., if it's 2/10, name something terrible).`;
-                }
-            }
-
-            document.getElementById('card-secret-viewport').style.display = 'block';
-            document.getElementById('btn-trigger-next').style.display = 'block';
-            document.getElementById('btn-trigger-reveal').style.display = 'none';
-        }
-
-        function processRotationAdvance() {
-            executionPointer++;
-            evaluateLoopUIRender();
-        }
-
-        // Discussion runtime compilation
-        function executeDiscussionTransition() {
-            switchActiveViewport('view-discussion');
-            document.getElementById('card-manifest-viewport').style.display = 'none';
-
-            const interactionLog = document.getElementById('ui-discussion-rules');
-            if (selectedMode === 'word') {
-                interactionLog.innerHTML = `
-                    <h4 style="color:#38bdf8; margin-bottom:6px;">Secret Word Mode Activated</h4>
-                    <p style="color:#fff; margin-bottom:8px;">Go around the circle in order. Each player must give a <strong>single-word hint</strong>.</p>
-                    <p>No extra descriptions or full sentences allowed. Once everyone speaks, start the discussion and vote on who didn't fit the vibe!</p>
-                `;
-            } else {
-                interactionLog.innerHTML = `
-                    <h4 style="color:#38bdf8; margin-bottom:6px;">Vibe Rating Challenge Mode</h4>
-                    <p style="color:#fff; margin-bottom:8px;">Go around the circle. Each player names an entity or item that directly represents the <strong>secret X/10 quality level</strong>.</p>
-                    <p>The Imposter will have to guess the scale on the fly. Spot the person whose rating description feels completely off!</p>
-                `;
-            }
-        }
-
-        function displayEndGameManifest() {
-            const targetContainer = document.getElementById('ui-manifest-list');
-            targetContainer.innerHTML = '';
-
-            assignedMatchRoles.forEach(record => {
-                let badgeText = record.isImposter ? `<span style="color:#f87171; font-weight:bold;">[IMPOSTER]</span>` : `<span style="color:#34d399;">[Teammate]</span>`;
-                let displayContext = record.isImposter ? `Role text shown: "IMPOSTER" (Given True Clue Hint: "${record.imposterHint}")` : `Saw: "${record.truthPayload}"`;
-                targetContainer.innerHTML += `
-                    <div style="padding:8px; border-bottom:1px solid #334155; font-size:15px;">
-                        <strong>${record.playerName}</strong>: ${badgeText} (${displayContext})
-                    </div>
-                `;
-            });
-
-            document.getElementById('card-manifest-viewport').style.display = 'block';
-        }
-
-        function returnToLobby() {
-            switchActiveViewport('view-setup');
-        }
-
-        function switchActiveViewport(targetId) {
-            document.querySelectorAll('.screen').forEach(view => view.classList.remove('active'));
-            document.getElementById(targetId).classList.add('active');
-        }
-
-        // Global lifecycle init mapping bootstrap
-        window.onload = function() {
-            setupGenreSelectorOptions();
-            handleModeConfigChange();
-        };
-    </script>
-</body>
-</html>
+                    exactMatchingKey = targetGenre;
+                    activeWordPool =
