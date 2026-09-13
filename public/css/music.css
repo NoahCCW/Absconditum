@@ -1,0 +1,36 @@
+body{
+margin: 0;
+padding: 0;	
+width: 100%
+}
+
+#tbg{
+	
+background-image: url('../gifs/musicbg.gif');
+z-index: 5;
+}
+
+#bg{
+background-image: url('../images/covers.png');	
+background-repeat: no-repeat;
+background-position: top center;
+min-height: 2392px;
+min-width: 100%;
+z-index: 200;
+}
+
+@font-face {
+	font-family: 'Chernobyl';
+	src: url('../fonts/Chernobyl.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#vibecodewarn {
+	font-family: 'Chernobyl', sans-serif;	
+	position: absolute;
+	top: 0px;
+	color: red;
+	font-size: 100px;
+	z-index: 100;
+}

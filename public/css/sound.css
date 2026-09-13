@@ -1,8 +1,18 @@
+@font-face{
+	font-family: 'Royal';
+	src: url('../fonts/RoyalInitialen.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	
+}
+
+
 body{
 background-color: black;
 }
 
 #headr{
+font-family: 'Royal';
 color: white;
 position: sticky;
 z-index: 5;

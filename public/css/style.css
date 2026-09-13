@@ -1,22 +1,170 @@
+@font-face{
+		font-family: 'moms';
+		src: url('../fonts/moms.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+}
+
+@font-face{
+	font-family: 'astrology';
+	src: url('../fonts/Astrology tfb.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 body {
-	background-color: #ab77de;
+	margin: 0;
+	padding: 0;
 }
 
-#evil {
+.newbg {
+	background: linear-gradient(#000e19, #0099ff);
+	background-repeat: no-repeat;
+	min-height: 5000px;
+	min-width: 2558px;
+	background-size: 100% 100%;
+	background-attachment: scroll;
 	position: absolute;
-	top: 700px;
-	left: 50%;
-	border-radius: 10px;
-	width: 85px;
-	height: 64px;
-	transition: box-shadow 0.25s ease-in-out;
-	z-index: 1000;
+	left: 0px;
+	top: 0px;
 }
 
-#evil:hover {
-	box-shadow: 0px 0px 20px rgba( 0, 0, 0, 100);
+#hello {
+font-family: 'moms', sans-serif;
+color: white;
+position: absolute;
+left: 30px;	
+top: 5px;
+z-index: 10000000;
 }
 
+#foregroundgrass {
+position: absolute;
+left: 0px;
+top: 5000px;	
+}
+
+#earthspin1 {
+	height: 240px;
+	width: 240px;
+	position: absolute;
+	top: 0px;
+	left: 15%;
+
+}
+
+#emojispin1 {
+	position: absolute;
+	top: 4900px;
+	left: 0px;
+
+}
+
+#construction {
+	position: absolute; 
+	top: 4900px;
+	left: 1000px;
+	z-index: 100000;
+}
+
+#gifcitiesshrooms {
+	height : 76x;
+	width: 42px;
+	position: absolute;
+	left: 1050px;
+	top: 5050px;
+}
+
+#evillink {
+	font-family: 'astrology', sans-serif;
+	color: yellow;
+	position: absolute; 
+	top: 50px;
+}
+
+#skull {
+	position: absolute; 
+	top: 0px;
+	left: 2400px;
+	height: 108px;
+	width: 83px;
+	transform: scaleX(-1);
+}
+
+#cloud{
+	position: absolute;
+	top: 4250px;
+	left: 123px;
+	height: 469px;
+	width: 426px;
+	opacity: 80%;
+}
+
+#cloud1 {
+	position: absolute;
+	top: 4400px;
+	left: 520px;
+	opacity: 75%;
+}
+
+#cloud2 {
+	position: absolute;
+	top: 4250px;
+	left: 900px;
+	height: 590px;
+	width: 762px;
+	opacity: 90%;
+}
+
+#cloud3 {
+	position: absolute;
+	top: 4200px;
+	left: 1373px;
+	opacity: 77%;
+}
+
+#cloud4 {
+	position: absolute; 
+	height: 265px;
+	width: 500px;
+	top: 4300px;
+	left: 750px;
+}
+
+#bunnyman{
+	position: absolute;
+	top: 4750px;
+	left: 2350px;
+	height: 450px;
+	width: 182px;
+}
+
+#swan{
+	position: absolute;
+	top: 4650px;
+	left: 600px;
+	width: 72px; 
+	height: 112px;
+}
+
+#bust{
+		position: absolute;
+		top: 1000px;
+		left: 1500px;
+		width: 545px;
+		height: 690px;
+}
+
+#ruisiang2{
+	position: absolute; 
+	top: 4867px;
+	left: 900px;
+	width: 141px;
+	height: 133px;
+}
+
+/*
 #math1 {
 	color: black;
 	transition: color 0.5s ease-in-out;
@@ -240,21 +388,9 @@ body {
 	color: violet;
 }
 
-#earthspin1 {
-	height: 240px;
-	width: 240px;
-	position: absolute;
-	top: 0px;
-	left: 200px;
 
-}
 
-#emojispin1 {
-	position: absolute;
-	top: 700px;
-	left: 0px;
 
-}
 
 #computerold1 {
 	position: absolute;
@@ -307,12 +443,7 @@ body {
 	left: 970px;
 }
 
-#construction {
-	position: absolute; 
-	top: 500px;
-	left: 1000px;
-	z-index: 100000;
-}
+
 
 #endofit {
 	position: absolute;
@@ -394,11 +525,7 @@ z-index: 10;
 	top: 500px;
 }
 
-#gifcities5 {
-	position: absolute;
-	left: 800px;
-	top: 750px;
-}
+
 
 #gifcities6 {
 	position: absolute;
@@ -510,53 +637,6 @@ width: 1000px;
 z-index: 30;
 }
 
-#truths1{
-position: absolute; 
-left: 700px;
-top: 300px;
-color: #ffff99;
-text-shadow: 0px 0px 3px white;
-}
-
-#truths2{
-position: absolute;
-left: 200px;
-top: 980px;
-width: 1000px;
-color: #ffaaaa;
-text-shadow: 1px -1px 2px black, -1px 1px 2px red;
-}
-
-#truths3{
-position: absolute;
-left: 500px;
-top: 750px;
-color: #000000;
-text-shadow: 4px 4px 3px white, 4px -4px 3px white, -4px 4px 3px white, -4px -4px 3px white, 0px 0px 8px white;
-font-style: oblique;
-z-index: 1000px;
-}
-
-#truths4{
-position: absolute; 
-left: 700px;
-top: 650px;
-z-index: 1000;
-color: #00ffff;
-text-shadow: 3px 3px 2px #0000ff, 3px -3px 2px #0000ff, -3px 3px 2px #00ff00, -3px -3px 2px #00ff00;
-font-style: italic;
-width: 2000px;
-}
-
-#truths5{
-position: absolute;
-left: 300px;
-top: 1000px;
-z-index: 1000;
-color: #aaffbb;
-text-shadow: 0px 0px 2px orange;
-}
-
 #propaganda1{
 position: absolute;
 left: 1500px;
@@ -594,15 +674,6 @@ top: 350px;
 left: 1780px;
 transform: rotate(183deg);
 
-}
-
-#truths6{
-color: #bbffbb;
-z-index: 1000;
-position: absolute;
-left: 570px;
-top: 347px;
-text-shadow: 1px 1px 2px white;
 }
 
 #ayjak1{
@@ -669,3 +740,5 @@ top: 500px;
 height: 10%;
 width: 10%;
 }
+
+*/
