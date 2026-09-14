@@ -1,3 +1,27 @@
+@font-face{
+	font-family: 'Astrodot';
+	src: url('../fonts/AstroDotBasic.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+	
+}
+
+@font-face{
+	font-family: 'gatb';
+	src: url('../fonts/Go around the books 2022.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+	
+}
+
+@font-face{
+	font-family: 'imweird';
+	src: url('../fonts/i_mWeird.TTF') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+	
+}
+
 body {
 background: radial-gradient(
     circle,
@@ -15,10 +39,26 @@ background: radial-gradient(
 
 #lsd2 {
 position: absolute;
-top: 200px;
+top: 400px;
 left: 0px;
 color: #0e001a;
 width: 300px;
 background-color: white;
+font-family: 'imweird';
+}
 
+h3 {
+	font-family: 'Astrodot';
+	font-size: 100px;
+}
+
+h1{
+	font-family: 'gatb';
+	transform: rotate(180deg);
+}
+
+#eye{
+	position: absolute;
+	top: 40%;
+	left: 40%;
 }

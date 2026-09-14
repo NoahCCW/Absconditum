@@ -12,6 +12,26 @@
 	font-style: normal;
 }
 
+@font-face{
+	font-family: 'crtstyle';
+	src: url('../fonts/CrtOverscan-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'tequila';
+	src: url('../fonts/TEQUILA_.TTF') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'faith';
+	src: url('../fonts/Faith Collapsing.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 
 body {
 	margin: 0;
@@ -30,13 +50,30 @@ body {
 	top: 0px;
 }
 
+#alertBtn{
+	font-family: 'faith', sans-serif;
+	font-size: 30px;
+	background-image: url('../images/croatia1.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no repeat;
+	padding: 12px 24px;
+	border: none;
+	cursor: crosshair;
+	display: inline-block;
+	position: fixed;
+	top: 60px;
+	left: 75px;
+	color: white;
+}
+
 #hello {
 font-family: 'moms', sans-serif;
 color: white;
-position: absolute;
-left: 30px;	
-top: 5px;
-z-index: 10000000;
+position: fixed;
+left: 5px;	
+top: 0px;
+z-index: 10000;
 }
 
 #foregroundgrass {
@@ -80,7 +117,9 @@ top: 5000px;
 	font-family: 'astrology', sans-serif;
 	color: yellow;
 	position: absolute; 
-	top: 50px;
+	top: 1237px;
+	left: -75px;
+	transform: rotate(90deg);
 }
 
 #skull {
@@ -154,7 +193,28 @@ top: 5000px;
 		left: 1500px;
 		width: 545px;
 		height: 690px;
+	filter: drop-shadow(0 0 50px rgba(0, 240, 255, 0.3));
 }
+
+#vapour{
+	z-index: 10;
+	font-family: 'crtstyle', sans-serif;
+	position: absolute;
+	top: 1000px;
+	left: 1200px;
+	font-size: 300px;
+	letter-spacing: 100px;
+	
+	background: linear-gradient(0deg, #00f0ff 0%, #ff007f 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	filter: drop-shadow(0 0 45px rgba(0, 240, 255, 0.3));
+}
+
+#vapour:hover{
+	filter: drop-shadow(0 0 45px rgba(255, 0, 230, 0.3));
+}
+
 
 #ruisiang2{
 	position: absolute; 
@@ -163,6 +223,101 @@ top: 5000px;
 	width: 141px;
 	height: 133px;
 }
+
+#iqr {
+	position: absolute;
+	top: 293px;
+	left: 1162px;
+	transition: filter 0.3s ease;
+}
+
+#iqr:hover{
+	filter: blur(8px);
+}
+
+#yyyyyyy{
+	position: absolute;
+	top: 4700px;
+	left: 1600px;
+}
+
+#hekate{
+	position: absolute;
+	top: 2700px;
+	left: 456px;
+	width: 171px;
+	height: 160px;
+}
+
+#titanpointe{
+	position: absolute;
+	top: 4900px;
+	left: 1600px;
+	width: 200px;
+	height: 160px;
+	
+}
+
+#thomas1{
+position: absolute;
+color: brown;
+top: 5035px;
+left: 1660px;
+text-shadow: 2px 2px 1px orange;
+}
+
+#propaganda1{
+font-family: 'tequila', sans-serif;
+font-size: 40px;
+position: absolute;
+left: 1500px;
+top: 200px;
+color: #aa0000;
+text-shadow: 0px 0px 3px #aa0000;
+text-decoration: underline 1px #aa0000;
+}
+
+#mh370{
+	position: absolute;
+	top: 4000px;
+	left: 562px;
+}
+
+
+
+
+
+/*
+#inversion{
+	position: fixed;
+	width: 150px;
+	height: 150px;
+	background-color: white;
+	border-radius: 50%;
+	pointer-events: none;
+	mix-blend-mode: difference;
+	transform: translate(-50%, -50%) scale(0);
+	transition: transform 0.1s ease-out;
+	z-index: 9999999;
+}
+
+#inversion.active{
+	transform: translate(-50%, -50%) scale(1);
+}
+*/
+
+.falling-square {
+	position: absolute;
+	pointer-events: none;
+	background-color: white;
+	mix-blend-mode: difference;
+	will-change: transform, opacity;
+	transform-origin: center center;
+	Z-index: 9999999;
+}
+
+
+
 
 /*
 #math1 {
@@ -637,14 +792,7 @@ width: 1000px;
 z-index: 30;
 }
 
-#propaganda1{
-position: absolute;
-left: 1500px;
-top: 670px;
-color: #ff0000;
-text-shadow: 0px 0px 3px #550000;
-text-decoration: underline 3px red;
-}
+
 
 #asterix{
 color: #ab77de;
@@ -724,13 +872,7 @@ left: 1500px;
 top: 50px;
 }
 
-#thomas1{
-position: absolute;
-color: brown;
-top: 764px;
-left: 29px;
-text-shadow: 2px 2px 1px orange;
-}
+
 
 #imp {
 z-index: 100000;

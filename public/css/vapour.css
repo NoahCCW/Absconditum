@@ -1,0 +1,39 @@
+@font-face{
+	font-family: 'crtstyle';
+	src: url('../fonts/CrtOverscan-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body{
+background-image: url('../images/vapour.png');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+background-attachment: fixed; 
+height: 100vh;
+margin: 0;
+}
+
+#helios{
+	height: 866px;
+	width: 581px;
+}
+
+#toptext{
+	font-family: 'crtstyle', sans-serif;
+	font-size: 100px;
+	letter-spacing: 10px;
+	position: absolute;
+	top: 0px;
+	left: 50px;
+	color: magenta;
+	text-shadow: 0px 0px 10px cyan;
+}
+
+#fiji{
+position: absolute; 
+left: 70%;
+top: 70%;	
+}

@@ -1,10 +1,83 @@
 console.log("ȃ̵̢̯͎͖̘͕̝̙̼̖̲̮̭̯̱͎̬̞̟̘̖͕̀̂́͗̔̀̈́̍̓̋̌̎͗͛͆̈́̈̅͛̇̈́̋̉̔̄̀̽̀͆͋̈͘͘͘͘͜͝͝ͅb̵̛̛̜̱̣͌̆̃̂̒͂̒̔̾̈́͂̑̅̈́̓͒̈́̏͌̀͂́̈́͋͛̆̃͂̿͆̍̇͗͌͆́͆̍̂̉̈͑̍̓̓͌̌̀͗̒̌̍̕̕̚̕̕͝͠ͅs̵̡̛̛͓̬̻̼̼͓̠̩̬͓̠̺͎̬͈̠̲̖̯̺̣̙̮̬̞͓̪͇̙̈̅̏̈́͋̆̐́́͋̔̇̈́̿̐̈̒̓͌̓̈͋̾̈́̾̐̓̋̄͌̍̚̚̚̚̚̕͜͝ͅͅc̶̡̨̛̠̝̬͈̭̳͈͓͖͙̘̺̪͕͓͇̣̻̘͍͈͔̹̥͚̳̻̦͓̺̹͍͉̥͖̟͑̈́̑̀́̇̉͊́̄̓́̽̑͗̋͘ǫ̵̢̩͔̠͕̞͓̗͓̀̓̎̎̑͗̃͒͂͊̓͌͋̐̃̔͊̏͌͌̃͛̌̎̑̊̏̃͋͌̊̎̑̿̅̆͑̍̚̚̕̕͠͠͝ͅń̵̡̧̳̪̣̼͔̫͓͚͍̬͕̼͚̦̱̱̦̥̥̈́͌͂̔̋͑̔͊͐̊̑͘̕d̶̛̪͙̩̬̟͎͉̮͖̖̯̂̆̅̍̌̀̿̀̒̏̆͂̈̈́͂̐̑̌̑̒̉͌͋̏͑̉̀͊̓̈́͋̈́̚̚͘͘͘͝ị̶̢̧̢̧̛̣͚̺̞͙̗͔̥̭͖͓̲̪̝͈̮̝̞̲̱̼͍̇͂̄̈̆̇̄̈́́̈̉̈́̄͑̃͊͊̃̄̈́̓̈́͋́̓̈́̀̏̚͘̕͠͝͝͝ͅt̶̨̨̨̰̦̹͕̝̰̩̻̯͓̝̳͈̺̳̥͎̻̯̮̱̭̼̪̞̜̫̹̪͍͚͙̣͙͚̟͊͊͐̋͐͋͗͋͂͒̄̀͋͊̓̅͘͜͜͝͠ͅͅų̶̨̡̣̝̹͖̖̱̠̼̺͎̳͚̣̬̫̖̳͕̯͓̜̲̼̟̫̥̤̻̰̜̹͕̻̙̫͈̻͍̻̤͇̱̊̏͋̾̈́̄̽̏̀͌͑̍͐̍̑́͆̈́̃͛̓̅͐̿͐̃̾͆̏́̒̀͐̆͗͂̇̿̅̚̕͘͘̚͜͝͠͠͠ͅͅm̴̢̢̨͈̳͎͈̥̻̦̞̦̬͑̈́́̀̽̀͒̈́̈́͗́̔̌̓̀̈͐̃̇̄̎̊͌̇̊̒̃͊̌͒̑̓͒̉̇̏̏͐̑͊̂́̉̿̉̓͐̚̚̕̚̕͘͘̚͜͠͝͠");
 
-
+const clicksound = new Audio('../public/audio/drop.wav');
+/*const lens = document.getElementById('inversion');*/
 const hewo = document.getElementById('hello');
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 const buttonWarn = document.getElementById('translation4');
 const buttonWarn2 = document.getElementById('translation5');
+
+let lastCreatedTime = 0;
+const createInterval = 75;
+
+let lastMouseX=0;
+let lastMouseY=0;
+let lastMouseTime = Date.now();
+
+window.addEventListener('mousemove', (e) => {
+	const now = Date.now();
+	const deltaTime = now - lastMouseTime || 1;
+	
+	
+	const deltaX = e.pageX - lastMouseX;
+	const deltaY = e.pageY - lastMouseY;
+	const distance = Math.hypot(deltaX, deltaY);
+	
+	const speed = distance / deltaTime;
+	
+	lastMouseX = e.pageX;
+	lastMouseY = e.pageY;
+	lastMouseTime = now;
+	
+	if (now - lastCreatedTime > createInterval) {
+		createSquare(e.pageX, e.pageY, speed);
+		lastCreatedTime = now;
+	}
+});
+
+function createSquare(x, y, speed) {
+	const square = document.createElement('div');
+	square.classList.add('falling-square');
+	document.body.appendChild(square);
+	
+	let size = Math.min(Math.max(20 + speed * 30, 20), 80);
+	let currentX = x - size / 2;
+	let currentY = y - size / 2;
+	
+	let speedY = 2 + Math.random() * 2;
+	let shrinkRate = (Math.random() * 0.2) + 0.1;
+	
+	let rotation = Math.random() * 360;
+	let rotationSpeed = (Math.random() - 0.5) * 4;
+	
+	square.style.width = `${size}px`;
+	square.style.height = `${size}px`;
+	square.style.left = `${currentX}px`;
+	square.style.top = `${currentY}px`;
+	square.style.transform = `rotate(${rotation}deg)`;
+	
+	function animate() {
+		currentY += speedY;
+		size -= shrinkRate;
+		
+		if (size <= 1 || currentY >= 5332){
+			square.remove();
+			return;
+		}
+		square.style.width = `${size}px`;
+        square.style.height = `${size}px`;
+        square.style.top = `${currentY}px`;
+		square.style.transform = `rotate(${rotation}deg)`;
+		
+		requestAnimationFrame(animate);
+		
+	}
+
+requestAnimationFrame(animate);
+}
+
+
+
 
 function changeHelloWorldChar() {
 let text = hewo.innerText;
@@ -39,8 +112,6 @@ function message() {
 		window.open("secret.html");
 	}else if (name == "cinnthebun") {
 		window.open("crane.html");
-	}else if (name == "torta") {
-		alert("this desk aint big enough for the two of us, and unfortunately i OWN you");
 	}else if (name == "ASJDB!*(@&#KJSHKABasudOAksh@H*UO!KQWlkjdNQIDU@eoIU2oNEQKWJNEQDQUIOuqwJhq2oi"){
 	dev = 1;
 	alert("you are in developer mode, you can now use the inspect menu or console");
@@ -51,6 +122,27 @@ function message() {
 
 };
 
+
+
+
+
+/*
+window.addEventListener('mousemove', (e) => {
+	lens.style.left = e.pageX + 'px';
+	lens.style.top = e.pageY + 'px';
+});
+
+window.addEventListener('mousedown', (e) => {
+	lens.style.left = e.pageX + 'px';
+	lens.style.top = e.pageY + 'px';
+	lens.classList.add('active');
+});
+
+window.addEventListener('mouseup', () => {
+	lens.classList.remove('active');
+});
+*/
+/*
 const evilButton = document.getElementById('evil');
 
 evilButton.addEventListener('mouseenter', function() {
@@ -62,6 +154,17 @@ evilButton.addEventListener('mouseleave', function() {
 	buttonWarn.innerHTML = "Since the danger is behind, avoid";
 	buttonWarn2.innerHTML = "You were warned in advance.";
 });
+*/
+window.addEventListener('click',(event) => {
+	if (event.button === 0) {
+		const soundclone = clicksound.cloneNode();
+		soundclone.play().catch(error => {
+			console.log("fuck you", error);
+		});
+	}
+	
+});
+
 
 document.addEventListener('keydown', function(event) {
 console.log('key pressed ' + event.key);
