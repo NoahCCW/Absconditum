@@ -34,6 +34,22 @@ margin: 0;
 
 #fiji{
 position: absolute; 
-left: 70%;
-top: 70%;	
+left: 80%;
+top: 30%;	
+}
+
+#countach1{
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	width: 640px;
+	height: 360px;
+}
+
+#countach2{
+	position: absolute;
+	left: 20%;
+	top: 40%;
+	width: 600px;
+	height: 337px;
 }
