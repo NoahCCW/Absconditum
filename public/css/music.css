@@ -1,7 +1,13 @@
-body{
-margin: 0;
-padding: 0;	
-width: 100%
+
+body {
+	background-image: url("../gifs/musicbg.gif");
+  margin: 0;
+  height: 100vh;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 #tbg{
@@ -27,10 +33,102 @@ z-index: 200;
 }
 
 #vibecodewarn {
-	font-family: 'Chernobyl', sans-serif;	
-	position: absolute;
-	top: 0px;
-	color: red;
-	font-size: 100px;
-	z-index: 100;
+	font-family: 'Chernobyl', sans-serif;
+  position: absolute;
+  top: 0px;
+  /* REMOVE 'color: red;' because it overrides the transparent fill */
+  font-size: 100px;
+  z-index: 100;
+  
+  background-image: url('../gifs/equalizer.gif'); /* Check this path! */
+  background-size: cover;
+  background-position: center;
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+	
+}
+
+
+#sphere-container {
+  width: 1000px;
+  height: 1000px;
+  position: relative;
+}
+
+#sphere-container canvas {
+  display: block;
+}
+
+/* CSS2D Label Renderer wrapper layer */
+.css2d-label-renderer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.sphere-node-wrapper {
+  display: inline-block;
+  pointer-events: auto;
+}
+
+/* Styling for the image "squares" */
+.sphere-img {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sphere-node-wrapper:hover .sphere-img {
+  transform: scale(1.25);
+  z-index: 100;
+}
+.center-emoji-img {
+  width: 500px; /* Adjust size of the center image as desired */
+  height: 500px;
+  object-fit: contain;
+  user-select: none;
+  display: block;
+  pointer-events: none;
+  margin-left: calc(-250px + 250px);  /* Change +0px to shift Left (-) or Right (+) */
+  margin-top: calc(-250px + 250px);
+}
+
+.spotify-rain {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  background-image: url('../images/spotify.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 2147483647; /* Maximum possible z-index to stay above Three.js canvas */
+  image-rendering: pixelated;
+  animation: rainPixelFade 0.8s ease-out forwards;
+}
+
+@keyframes rainPixelFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: contrast(100%) blur(0px);
+  }
+  60% {
+    opacity: 0.8;
+    filter: contrast(300%) blur(1px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--drift)), 70px) scale(0.3);
+    filter: contrast(500%) blur(2px);
+  }
 }
