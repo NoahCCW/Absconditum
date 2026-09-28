@@ -17,7 +17,7 @@ const centerWrapper = document.createElement('div');
 centerWrapper.className = 'sphere-node-wrapper';
 
 const centerImg = document.createElement('img');
-centerImg.src = '../public/gifs/headphonesemoji.gif';
+centerImg.src = '../gifs/headphonesemoji.gif';
 centerImg.className = 'center-emoji-img';
 centerWrapper.appendChild(centerImg);
 
@@ -43,7 +43,7 @@ const totalImages = 36;
 const items = [];
 for (let i = 1; i <= totalImages; i++) {
   items.push({
-    src: `../public/images/image${i}.jpg`,
+    src: `../images/image${i}.jpg`,
     url: `https://example.com/page${i}`
   });
 }
