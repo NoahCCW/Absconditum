@@ -1,0 +1,39 @@
+@font-face{
+	font-family:'darkromantic';
+	src: url('../fonts/DarkRomantic.otf') format('opentype');
+		font-weight: normal;
+		font-style: normal;
+}
+
+
+html {
+  height: 100vh;
+  
+  background-image: url('../images/blasphemy.jpg');
+  background-position: center bottom; 
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+#penance{
+	position: absolute;
+	top: 0%;
+	left: 25%;
+	font-family: 'darkromantic', sans-serif;
+	font-size: 75px;
+	font-color: black;
+	text-shadow: 0px 0px 7px white;	
+}
+
+#spinningeyes{
+	height: 250px;
+	width: 185px;
+	position: absolute;
+	top: 50%;
+	left: 75%;
+}

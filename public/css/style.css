@@ -316,7 +316,11 @@ text-decoration: underline 1px #aa0000;
 	Z-index: 9999999;
 }
 
-
+	#bigdipper{
+	position: absolute;
+top: 133px;
+left: 2100px;	
+	}
 
 
 /*
