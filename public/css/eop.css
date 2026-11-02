@@ -1,0 +1,10 @@
+html{
+	margin: 0;
+background-image: url('../images/palace.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+body{
+	margin: 0;
+}
