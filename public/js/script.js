@@ -122,39 +122,61 @@ function message() {
 
 };
 
+function frankspeak(){
+	var messages = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20']
+	var message = messages[Math.floor(Math.random()*messages.length)];
+	
+	/*yandere dev code incoming...*/
+	
+	
+	if (message == "1") {
+		alert("How can you determine whether a sequence is arithmetic?");
+	}else if (message == "2") {
+		alert("Guy purchased a rare stamp for $820 in 2001. If the value of the stamp increases by 10% per year, how much will the stamp be worth in 2010?");
+	}else if (message == "3") {
+		alert("I'm raining, but it's about interests and momentum. For example, if I deliver goods more than twice, the price is cheap. People say there's nothing that can become exclusive website content. I had the chance to spend an hour here, and it felt like I could travel freely in Japan, hire a car, have a tour guide, and access things like public banks, post offices, registered mail addresses, etc.");
+	}else if (message == "4") {
+		alert("The human symbol is a golden fish, let it be there.");
+	}else if (message == "5") {
+		alert("This means wrong.");
+	}else if (message == "6") {
+		alert("Since the danger is behind, avoid");
+	}else if (message == "7") {
+		alert("You were warned in advance.");
+	}else if (message == "8") {
+		alert("i̸̧̢̨̨̨̨̨̢̡̧̨̨̡̨̡̨̨̢̧̨̧̡̡̧̨̛̛̛̛̛̛̛͇̥̥̜̟̳̰̞̬̠̗͖̬̪͓̲̯̯͓̗͓̜̗̤̭̗̣̟̜͉͇̜̤̹͉̗͓̻̘̻͙̻̺͓̫͙̝̟̟͈̰̱̪̠̫͎̹̭̼̩̦̬̱̣̣͖̥̫͙̘̺̟͓̠͎̗͇̖̣̳͎̭̠̼̳̭̠̝͙̗̝̲̟̱͉̟̩͈̙̥͈̜͙̙͚̼̫̣̘͚̝̱̰̝̖͍͎̪̲̰͓͚̜̘̬̺̝̣͚̘̠̙̜͕͎̣̪̬͖͙͚͚̲͔͈̯͚͖̳̲͔͖̹̯̠̠̰̞͈̟͖̬͈̞̥͔̩̪̩̼̳̞̪͖̖͖̤̩̖͔̭̝͈̬̠̙͕͉̰͎̞̟͖̩̼͍͔̹͚̱̹̮͖̳̜̫̱̞͉̱̻̙̹͓̫̭͇̩͙̠͖̲̙̘͕̪̝͙̞̯̤̥̰̭͚̺̲̹͍͇͈̜̤̱̪̱͈̱̞̮̗̯̲͊̒͌̃̓̒̀̿̇͂̀̏̈́͛̊͊͊́̈́̐̾̓̔̐̅̂̋́̀̄̽̈́̂̆̔̽͛̓͐̊̓̽̋̓͂͌͆͛͛̇̽̑̐͑̈́̈̎͂̋̾̌̔̄͑̓́̊̏̅̀̒̒̈́̊̍̊̂͂̀͒͋̌̿̈̂̏̎̋̓͒̅͛̑̈́̇̓̿̅́̈̋̉͋̿͑̔̽̄̿̋̈́͛̀̑̌̾̏͛͆̿͊̒̓́̌̾̂̇̈́̂̓̾̇̎̓͊́̍͆̊͒̓̃̊̍̔̐̆̄́̀̋̊̉̃̋͂̏͆̃͑̈́͛̌̽̈́̌͂̓̏̄̂̊͊̓̌́̏̎̈̄̑̀͛̀̔͐͋͆̓̀́̀͋͐̊̏̏̌͌́̉̏̽̽̿̂̐̈́́̏̓̎̍͊͋̎̇̈́̍͆̉̃̽̔̎͒̾̃̈́͌̌̏̚̕̕̕̚̚̕͘̕̕͘̕͜͜͜͜͜͠͠͝͠͝͝͝͝͝͠͝͝͝͝͝͝͠ͅͅͅͅͅͅͅ");
+	}else if (message == "9") {
+		alert("Allow pop ups!");
+	}else if (message == "10") {
+		alert("I thought that by using sound, I was going to start talking about some things. I thought that this is why I got this name. When I started talking like this, I thought that the only option for that was no. Don't go. I am going to give you an advertisement for a small candidate who started in Moratuwa. Let's see how this thing is done. This is why many things are happening. I think that it is possible to find out what happened. I think that for me, it is like this. Online trading loses online game.");
+	}else if (message == "11") {
+		alert("I think this is going to be done about mobile phones in Sri Lanka. Advertisements for Marxism in Dehiwala. If this is what you see, life is also after death. If this is what you say, life is also a huge victory. Reproduction by the President.");
+	}else if (message == "12") {
+		alert("Yitsheitq and other Ethiopian stories from Ethiopianlink. Pre-order this video from Ethiopianlink. Tirunesh is a hero. Tirunesh is a beautiful flower. Ethiopia is a union of secondary schools in the world. It is a beautiful flower. And on them, the eyes of the sleeping are in my heart. The beautiful flower is with death.");
+	}else if (message == "13") {
+		alert("It is very beautiful.");
+	}else if (message == "14") {
+		alert("A car, a three-year-old, a four-year-old, a five-year-old, a monster, a two-year-old, a three-year-old, a four-year-old, a child, a school, a teacher");
+	}else if (message == "15") {
+		alert("In fact, are all women who stay in Bali like those in the late stages of life considered commodities? I now have many online orders that explain everything. I stay here, but I personally feel that things will happen very quickly. Is it because in Japan, independent travel can be considered a very delicious thing? I like a report that said something.");
+	}else if (message == "16") {
+		alert("Try Absconditum's HexGuesser!");
+	}else if (message == "17") {
+		alert("Why are you wearing that stupid man suit?");
+	}else if (message == "18") {
+		alert("PoW Shield provides DDoS protection on OSI application layer by acting as a proxy that utilizes proof of work between the backend service and the end user. This project aims to provide an alternative to general anti-DDoS methods such as Google's ReCaptcha that has always been a pain to solve. Accessing a web service protected by PoW Shield has never been easier, simply go to the url, and your browser will do the rest of the verification automatically for you.");
+	}else if (message == "19") {
+		alert("Become the deleter");
+	}else if (message == "20") {
+		alert("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+	}else {
+		alert("I am Frank");
+	}
+	
+	
+	
+}
 
-
-
-
-/*
-window.addEventListener('mousemove', (e) => {
-	lens.style.left = e.pageX + 'px';
-	lens.style.top = e.pageY + 'px';
-});
-
-window.addEventListener('mousedown', (e) => {
-	lens.style.left = e.pageX + 'px';
-	lens.style.top = e.pageY + 'px';
-	lens.classList.add('active');
-});
-
-window.addEventListener('mouseup', () => {
-	lens.classList.remove('active');
-});
-*/
-/*
-const evilButton = document.getElementById('evil');
-
-evilButton.addEventListener('mouseenter', function() {
-	buttonWarn.innerHTML = "Ş̵̨̧̧̯̦͇͙̥͔̘͓̲̲̳̫̦̯͍̺̞̩̟̲͇͈̦͎͚̜̟͍̻̜̘͎͔͖͖̘͚̘̩̎͋͊̐̒̍̄͆͌̋̔͒̐͘͘͜͜͝į̸̡̡̢̢̢͕͙̼̫̮̬̱̗͙̭̯̯͍͍̳̟̲̻͛̉̿̏͂̌̓̍̋̅̋̾͂̃̾̂̍̈́̌͜͜͠͝ͅͅņ̸̡̢̨͙̬͕̣͚̼̘̝̣̦͙̯̳͈̰͚̣̺̬̱͐̈́́̾̉͛̄̔͛̄̅̈́̉̽͛͗̊̿̃̀̋̀͑͆͋͑́̎̃̆̀͑͗̎̓̈́͐̕̚̕̚͝͝ͅc̴̨̡̨̢̧̢̢̛͚͉̼͎̮͙͚̦̦͓̙̤̠̭͙̪̖͓̹͇̟̞̺̦̺̬̰̰̣̈́͐̈̈́̇̀͆͑̿̀̽̽̿͐̊̐̉͛̊͐͐̍̍̎̎̾́̄̒̌̔̏͘̚͜͜͜ͅͅẽ̶̡̺͔̫͒͌͊̋̎̆̊̈͂́̈́̌͊́́̈́̉̏̈́̒̓̕̕͘ ̵̡̧̻͚͕̰̲̲̞͚͉̖̮̹̘͇͓͙͔̳̼͙̖̣͔̠͗̅͑͆̒̈́͆̉̊͒̽̽̂̔̊̃̀̂͊̍͋͐͑̑́̋̒̑̓͐̉͂̍́̃͛͂̀̋̋̚̚̚͝͝͝ͅt̶̡̨̼̪͎̖̟͓͕̟͕̟͓̖̜̺̬͍̬̠̯̱̥̜͇̾̍̐̿̌̈́̃͆͛͆̇͂͊̔̀͑̋̀͗̚͠͝ͅḧ̴̝̳́̆ͅě̶̩̠͙̤̩̌̄͆̉͌̏̆͒̈̐ ̴̘̝̻̲̭̜͉̣̓̓̂͑̂̊̓̎̅̈́̑̉̔̍̊̒͑͛̒͆̈̈̕͠ͅd̶̡̧̖̬̬̬̣̜͕̗͚̩̘̱̝͓̫̼̙̬̱̩͔̥̣͓̝̗̹̗̥̙̈́̔̇́̈́̈́̔̉̀̉͂̓͑̉̈́͐͑̃̑͌̉͑̈́͒̊̈́̔̋͛͂́̈̎̽̀͒̄͝͠͝ā̵̡̠̭̗͇͖̦̺̣͔͇̗̟̋̊̽͆̏̒̎̉̄͋̀̃͐̅͐̓̑̚̚͘̕̕̚͘n̷̡̛͔̟̟̠͕̺̩̞͙̲̭̏͋͆̅͌̔͑̀͋̿̾̆̑͆̅̎͠ģ̸̡̖͉̥̫̬͙̘͔̦́̆̆̽̿͌͒̏̋̈́̓̽̃̈́̉̅̓͌͋̉̅̔̓̿̃͂̉̒̃͑̎̅̈̆̔͑͒̀̔͐͘̕͘̚ě̶̡̡̛͖͈̹̯͍͍̥̰̤̹͚̪͓̥̟͚̺͎͖̘̲͎͎̜̬̦̟̦̟̗̝͉̜̜̠͛̌̇͊͐͛̏̇̍̓̈́̂̾̅̈́͗͊͋͊̒̋̀͒́̿̂͐̚͘͝͠ͅr̸̡̨̧̧̡̛̠̩͎̻̞̳̺̫̹̗̲͕̯̤̺͓̩͙͙̠͙͖̜̩̮̺̺̲̱̤̟̙̩͓̤̗̊̏̒̈́̓͛̒̔̑̾̈́͐̔̿͘͜͜͜ͅ ̸͙͔̳̜͉̪̆̌̓̉̒̓̔̆̏̒͊́̍̇̉̋̅̑́̾̂̎̑̿̚̚͘͜͝i̸̡̡̡̛͙̤͉̮̱̼̩̙̮̞̩̰̤̻̼̰̙͙̗̩̯̺̝͍̞̖͌́̐̀̈̋͆̆͒̀̋͂́̀͗́͗͐̇̈́͆͛̍̽̀̏̌̈́́̅̈́͘̕͝͝͠s̷̨̧̧̼͇͖͔̗̣͓̖͚̮̰̘̮͖̳̺͈̼͍̪͎̘͓̗̠̹͈͔͎̖͍͖̠͉̼̿͆̔͒̾̀͂̍̎̊͊̀̉̃͠͠ͅ ̸̡̜͍̺͍̭̘͓̲͉̥̘̬̟̤͙̼͇͉͈̹̘̬̲͚͋̏̏̋͆̓́̑̒͐͗̈́́̄̄̃̆͌̈́̑͂̈́̆̐̔̄͐̈́͜͜͝͝ͅͅb̴̢̻̜̪̱̘̘͚͎̞̱͈̫͍̞̱͈̗͈̥̝̔̇̽̑̆͆̅̈́͆͌̎͂͌̏̄̅̽͐́̒͛͛̀̐̂̓̂͆̒͒͋̀̈́̚̕̚͘͜͝͠͠ê̸̡͔̥͙̣͖̪̫̼͉͉̓̊͠͝ͅͅḧ̴̡̨̡̛̛̫̻͕͍̮̫̹͓̞̹͙͇̘̜̖͖̭͕̦͇̣̤̭̻̝̦̪͉̞̼͇͗̓̄͗̈́̾͊̑̓́̀̍͑̓͌̆̇̃͑̆̈́̀͑͂̿̍̾̀̒̕͘̚͘̕͜͠͠͝ͅͅï̵̡̢̡̛̜̩̥͎͕̣͍̫͚̟͓͉̻̞͙̟̺̙̼̘̬̥̠̬̟̞̱͕͙̖̻̥͓̰̰͎̹̩̫̙̗̗ņ̸̢̧̲̩̭̤̞͍͎̳̊̿͗̆̂̿̈͠d̵̡̧̠͓̻̱͕̮͚̮͙̜̫̞̻̭͖̤̬͓͔͚̺̖̫̳̞͎̼͉͕̣̹̭̳̤̳̮̦͙͂͐͗̌̾̈́̈̓̔̾,̵̧̨̛͖̜̦̫͖͎̗̬͚̙͈͈̦͚̳̫͈͓̥͎̹̣͈̗͈̯̎̈̈́̉͌͒͐͋͆̾̓͒̈́͌͛̃̇̅̃̎̑̑̽̍͗́̕͜͜͝͠͝ ̷̛̛̛̛̺̲͕́̈́̈́́͑̈́̽̂̅̔̐̅̽̊̆͌͑͒̔͗̆̊͂̒̌̊͋͒̄̊͛̊͊̋̕̚͘͝͝͠͠ắ̶̧̨̧̛̛̛̺͓͓̗͔̰̹̬̤̰̙̘͕̫͕̘̮̞͙̺̻̞̮̳͚͈̫̔̄̈̾̇͂́̓̉̆̉͂̅͊̿̌̓́̕̚͝͠v̷̨̡̢̧̯̮̲̠͖̤̗̬̩̳͕͉͇̣̼͕̮̐͒̉̕͝͠ͅo̷̡̝̦͎̬̟͇̩͈̗̹̲͎̻̣̗̊̓̏̅̍͑̾͑͘͜͝ͅi̶͉̜̜͙̘͍̖̬̔͋̃̏̿̅͋͑͒̕ḑ̷͔̦͈̲̬̘͎̟̱͉̠̪̼̭̹̟̻̮̥̫̪͉͙͙͇̠͎͇̲̠̺̣͉̱̖̱͎̗̹̏́͜";
-	buttonWarn2.innerHTML = "Y̴̢̧̧̡̡̨̢̡̧̧̧̡͍̟͖̗͍͍͍͉̩̝̯̜̳̼͍̱̖̼̳̲̲̲͚̻͉̮͚͖̫̩̟͚̯̱̗͇̱̟̩̟͚̪̼͚̘̞͖̬̮̪̫̺̘̯̬̗͙̖̪̰̘̩̹̘̗̪̻͇͈̭͇̳̑́̽̅̈͒̄̾̏̆̒̾̾̔̇̊̑̿͆̈́̅̽̇͘͜͜͝͝͝͝͝͠͝ͅǫ̸̧̢̧̧̡̛̛̛̬̜͈͈̻̪̰̱̙̼̺̖͓̰̖͉͉͎̬͕͈̥̺̬̩͎̤̞̮̮͔̦̯̦̏̈́͑̑́̈̓͗̏̈̐̊̂̃̈́͐̌̈́̒̿̓̽͒͒̊̌̏̏̃̂̒̊̇̀̃̓͌̑͑́̑̏̈͐̈́̾͑̈̈̅̾̇̐̌͊͊́͆͂͆̎̌̐̿͑̄͂̒̀̕̚̕̚͘͜͝͠͝ų̶̧͇͕̹̖̘͕͙͙̞̲̘̣̗̯̝̰̺̱̬̲̺͙̱̺͚͙̩̯̠̪̞̹̩̞̺̗͉͚͔̣͗̓͛̇̍͌̐̀̀̈́͊̓̔̀͒̈́̇̚̚͘̚͜͠ͅ ̵̡̡̧̧̢͖͕̜̻͔̭͍͚̱̬̫͓̟̖̘̺̺̫̖͎̤̩̤̬̘̜͍̳̤͍͉̟̺̟̯͇͚̥͈̘̖͖͙́̅͑̀̀w̵̪̜̳̹͓̥̭̖̫̬̞̖͎̣̞͚̩̰̝̝͖̼̩̲̟̰̟̳̏̓͐̈͊̈̃̃̎̈́̉̎͊̌̿̔̂̈̉̄͘̚͝͝ͅé̷̡̮̲̯̘͇͈̥̂̈́͂̍̌́͊͒̔̿́̎̊̈̀͂̊̈́͐̈́͊̒̅̇̔̈̆̄́̈́̎̍̑͐͊͆̆̋̉͑̊͋̍̈́̒̋́͘͘͘͝͝r̷̨̢̢̡̧̢̡̛̙̼̖̞̞̖̠̺͔̪̰͓̩̯̲͍̺̣̪͍̳͎̟͖͍͎̺͇͖̟͕̘̖͍̫͓̟̬͕̰̮̮̯͍͇̞̼̼͈̀̍́̋͗̀̒͆͜ͅͅę̴̡̨̢̧̧̛̛̛̰͈̙̞̺̙͓͖͖̺͙̱̖̭̟͇͍̼̹̟̥̹̮̣̺̤̳̗͍̠͕̦̦̩̖̥̬͉̞͈̻̹̼̠̘̬̯̙̞̻̩̊̐̈́̈̉̑̃͌͗͒̆̓̊̈̈́̏̆͐̊͛͒̈́̉̄͌̐̎͌̇͊̽͐́́̇̈́̿͐̈̓͑̌͌̄̓̋͑̆͊̚̕͜͜͠͠͝ͅ ̴̧̡̧̘͇̙̰̣̹̜̺͍̥̥̟̻̹͔̹͔̦̼͓̺̣͔̰͈̯̠̥̮̳̖͍̮̭̥͎̏͐͆́̃̃̀̐̊̈̊̎͒͐̑̾̈́͆̿̏̿͌̓̊̓̿̉̉̓̂̚̕̚̕̚͜͜͜͝͝͝͠w̸̨̢̡̡̧̢̨̛̛̛̛̹͓̜̻̟̻͔̬̟̝̦̼̮̗̬̟̦̼̫̮̯͕͇͖̩̬̪̞̪̜͚͖̱̩̘̪̪̯͇̝̮͚̯̝̹̤̟͇͓̩͉̦͇͓͎̩̮̥̩̜͍̲̠͓͚̭͔͖̘̯̪͍̬͓͌̌͐̌̎͋͌̂͌͐͊̅͋̅̽͗͂͆̌̐̽̿́͒͂͌̾̈́̇͆͂̈̉̀͒́̽̀̈͒̽́͂̓͒̓͌͗͑̔͊̑̆͘͝ͅͅͅą̷̨̨̡̨̡̛̱͔̼̻̲̰̰͕̤͖̻̙͔̖͙̗̖͍͍̘͇̞̭͈̳͍̮̘͉͓͓͉̯̹̪̯͚̘͖̯͕̖̮̦̪̠̪͕͇͓̺̠̣̫͍̙̖̰̞͌̇̈͂̓̈́͌̆̓͋͌̇̿̈̀̈́̆̄̀́̇̇͂̄̒̒̋͆͐̐̅͌̕̚̕͜͜͝͠͝ͅͅͅͅr̴̡̬̮͒͆̃̓̐͗̈́̓͌̍̾̓͂́̌̕͝ņ̸̨̧̧̧̧̨̧̡̡̧̠̼͓͙̘͎̖̥̯̺͙̹̭̻̖͉͇̭͕͔̖̫̯̝̠̳͕̬̰̰̺̙͎̮̲̳̠̥̰̠̲͕̘̟̼͉͍̬̦̳̝̱̠̻̟̯̤̩̱͇̳͈͎̱̰̰̜̯̤̯̜͖̪̖̈́͐̒̽͒͂̎̎̈̓͂̐̑͒͐̉̐͂̅̍̃́͜͜͜ͅͅͅȩ̶̨̧̡̡̞̗̝͉̙̼̲͓͎̪̖̘̪͕̥̣͓̻͙̟͕̺̪̹͓̝͙̪͔͍̩̉͗̅̉̈́̔̑̈́̿͌̂̆̅͒̌͂͊͌̃́͑̀̋̌͊̅̀̉̃̽̽͗͌̈́̉̂̊͌̌̽̉̋̂̎́̎́̓̃̏͂͘̕͜͝͝͝͠͠͝͝ͅͅḑ̸̧̢̨̘̘̻̺̜͉͎̳̺̦͈̻͍̺̻̩̺͇̰̻̼̤̥̖̬̘̯̰͙͈̳̠͉̮̬̤̠̺͈̝̤̖̮̩̳̼͖̣̬̤̟̬̮͙̭̫͚̙͓̜̯̣̻̖̮̺̣̬̝̱̇̄̿̎̀̀̈́͑͛̌̓͊̓̈́͂̋̌̆̈́͊̈́̀̊̉̑́̇̈́̋̀̂̑̈̄̎̑̑̀̍̊̌̎̆͗̌͐̆̋̈́̅̈́̀̎͂̏͆̒̒̓̄̈́̐̆̆̅͗̾͑̏͘͘͘̚̚̕͘͘͜͝͝͝͝͠͠ͅ ̸̧̧̨̢̨̡̢̨̛̳̝̭̳͇̼̻͓̻̜̟̻̱̘̠͉̤̝͎̰̟̖̫͈̦̝͚̘̙̖͍͙̘̳̩̮͕̼͔͈̹̟͍̻͖̹̠̹̳̖̙͇̣͚͉̦̈̀͋̀͒͑̋̈̌̒̋̄̾̎̇̄̉̆̃̈̌͆̅̅͂̉͌̋̎̎͛͗̍̓͆̅́͑͒̑̐̓̈͒̎͒̎̈͌͆̔̓̉̑̈́̊̋̽̈́́̏̑́̎͐́̕̕͘̕͜͜͝͝͝͝͠͠͝͠͝ͅi̷̢̨̧̨̠̩̫̙͇̳͕̼͕̼͓̖̖̺̻̳̻͉̱̯̯̠͕̝͈͍̦͓̘̰̱̭͎̲̫̹͍̠̤͔̟̣̥̳͍̝̲͉͙̮͚̦͕̞͑̑̃̚͜ñ̴̡̨̨̧̨̛̞͈͉̥̠̻̲͚̮̯͇̫̘̫͖̯̙̠͖̼͚̗̯̼̖͚̥̺̼̬̤͇̘̣̗̞͔̪̗̟͔͕̼̫̤͍̦̹̝͚̼̠̙̰̻̦͖̬͚̬̦̲̬̱̗͙̙̰̗͙̤̳̖̞̪̟͍̭͓͖͔̣̂̃̔̎̃͆͌̿͌̏̎̇̕̚͜͜͜͝͝͝ ̷̡̨̨̢̧̧̢̧̛̛̹̤̤̝͍̖̥̫̙̱͚̞̯̩̩͙̺̖̦̬͙̣̹̘͍͈͔͕̝̯̰̙̮̝̙̭͉̱̣͍͚͉̮̟̯͖̗̖̞̤͔̩̯̩͚̲̟͚̦̦̠̣̹̗̙̗͓͕̽̿͛̋̈́͌͐̄̑̾͆͐͂̎̒̉̋͌̿̊̅͂̋͋̂̇̎͋̐̃̐̃̓͌̌̊̇͋̾̍̀̊͂͋̍̈̅͛̈̓͆̓̈́̎̕͘͘͠͝͝͝ͅa̶̧̧͎͎͎͖̟̭͓̮̲̼͇͚̟̠̝̲͓̣̻̩͉̻͖̬̟̦͍̼͎̝̥̟̙̪͕̮̳̹̿̍͑̃̈́̈̊̎̄̎̓̎̈́̇͋̆̑̒̾̉̀͑̇͒̾̒̈̏͆̅͌̓̚̚̕͜͜͝͝ͅd̸̡̢̧̻̥̙͚̟̣̘̦͉̯͇͓̼̹͎͓͇̼̖͚̰͙͓̥̻͔̬̤̳̞̲̪̤͉͙̼͓̬̺̰̩̱͙̞̱̩͚̎̏̌̒̓̔͆̔̅͋̍̌̊͂̆͂̃̈́̿̃͊̓̀̑͛̃͑̅͆̈́͐͌̃̈̃̀̈́́̇̋̋̌́̿͊̔̉̒̊̀̈́̽͘͜͜͜͠͠͠͝͝ͅͅͅv̷̡̢̭̹̩̼̩̳͚̰̳̩̠͇̫̣͎͖̣̦͔͈͕̬̟̳̫̪̞̤̦̼̼̤͚̗̝̮̹̠̭̩̹̞̦̬̲͚̣͍̠̯̮͈̊̈̎̐̀̆̈́̒͌̍̔̆̀͑̎̀́̑̓̊̾̉̓̇̐̿̓̿̔̂̾̐̐̈̈́̇͛̆̇̂͌̀͐̓̏̔̃͌̔̓́̀̈́͛̔̽̍̏̒͛̋͗̅̈́͛̒̉̐͂́͋̓̆͘̚̕̕͘͘̚͜͝͝͝͝͝͠͠͝ͅa̴̡̧̨̧̧̨̛̛̛̯̠̟̗̥̺̳̙̹̦̣̜̲̲͎͙̜̖̣͇̥̬̼̬̣̜̱̮̤̼̜̝̯̞̮̻͉̗͔̱̲̜͓̖̖͖̙̥͐̀̐̈́̎͛̊̇̾̀̈́̎̐͒̃͆̐̽͐̿̂̍̌̌͌̊͋̈́͆͛̋̍̌͑̏̄̾̈́̽̒̈́̂̅̉̌͋͐͌̅̋̊͐̉͑͑̓͂͒̋͗̒̔͘̚͘̚͘͘͠͝͠͝͝ṇ̸̢̡̡̰̖̼̼̠̤̦̝̞̘̺̼̤̻̗͍̝̖̬̫̮̳͇̮̞̓̄̑̋͆̅̓̈́͑͆̒͌͌̎͆̏͗̓̌̂̒́͆͒͆͑̏͆̓̈́͌͌͛̈̾̇́̅͋̚̕͜͝͝͝͝͠ć̷̢̧̖͉̺̟͕͈̦̳̼̙̬͈̮̠͍̙̭̮͎̰͈̭̤̰̗͔̼͓̉̄̀̍̏͌͆̆̃̈́̑͒̆̈́̃̍̊̃͂̌̓͊̂̈́̅͒͌̓̍̀̈͗̌͌̆͊͑́͘͘̚͜͠͝͝ͅͅę̵̢̡̨̢̧̨̨̧̛̛̻̬̞̬̖̯͓̫͔̟͇̳̯̻̻͖͕̙̟͖̱̥̲͔̺͇̥̻̦̭͕͖̰͙̰͔̦͔̘̬̙̝̺̫̱̞̮̖̪̘̦͚̺͈̯̜̙͓͒̂̓̍͌̈́͐͌̄̒́̅̾̎̂́̔̒̓͂̀͊͋̈́̔̅͒̔̆̾̍̓́̆̅̒̐̈͛̐̐̀̇̀̔͐̎͑̒́̈̈̂̈́͒̔͑͆̈́̒̀͘͘͜͜͝͝ͅͅͅ.̵̧̧̧̧̡̡̡͖̪̭̪̲͈̩̘̦͇̲̟̻̜̼̮͖̘̝̫̹̟̙͇̩̺̬̰̯͓̝͉͓̯͉͕͇̟̣̘̱̲̖̪̩̝̰͎̟͉̭̖̪̬̗͍̤̟̝͕̣̻̳̘̬͓̐̑͂̉̊̔̾͛̈͆̎̊̀̀̈́͑̅͒͐̽̑͂͛̾͆́̿̌̀̄̿́̿͑̿̎̈́̊̓̈́̓́̑̾͂͆̃̄̎̄̓̉͐̓̔̍̚̕̕̕͘͜͝͝͝ͅͅͅͅ";
-});
-
-evilButton.addEventListener('mouseleave', function() {
-	buttonWarn.innerHTML = "Since the danger is behind, avoid";
-	buttonWarn2.innerHTML = "You were warned in advance.";
-});
-*/
 window.addEventListener('click',(event) => {
 	if (event.button === 0) {
 		const soundclone = clicksound.cloneNode();
